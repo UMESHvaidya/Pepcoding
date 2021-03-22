@@ -4,6 +4,7 @@ import java.util.*;
 import java.lang.*;
 public class InverseNumber {
     public static void main(String[] args) {
+
         Scanner scn = new Scanner(System.in);
         String number = scn.next();
         int []arr = new int[number.length()];
@@ -12,5 +13,6 @@ public class InverseNumber {
         for(int i = arr.length -1; i >= 0; --i)
             System.out.print(arr[i]);
         System.out.println();
+
     }
 }
