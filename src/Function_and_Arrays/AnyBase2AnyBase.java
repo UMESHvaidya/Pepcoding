@@ -9,12 +9,12 @@ public class AnyBase2AnyBase {
         int number = scn.nextInt();
         int base_1 = scn.nextInt();
         int base_2 = scn.nextInt();
-        int d = getValueIndecimal(number, base_1);
+        int d = getValueDecimal(number, base_1);
         int ans = getValueInBase(d, base_2);
         System.out.println(ans);
     }
 
-    public static int getValueIndecimal(int n, int b){
+    public static int getValueDecimal(int n, int b){
         int decimal= 0,counter = 0;
         String number = String.valueOf(n);
         char[] digits = number.toCharArray();
@@ -25,15 +25,14 @@ public class AnyBase2AnyBase {
         return decimal;
     }
     public static int getValueInBase(int number, int base_2){
-        ArrayList<Integer> lst = new ArrayList<Integer>();
-        int count = 0;
-        String ans = "";
+        ArrayList<Integer> lst = new ArrayList<>();
+        StringBuilder ans = new StringBuilder();
         while (number != 0){
             lst.add(number%base_2);
             number /= base_2;
         }
         for(int i = lst.size() - 1; i >= 0; --i)
-            ans += lst.get(i);
-        return Integer.parseInt(ans);
+            ans.append(lst.get(i));
+        return Integer.parseInt(ans.toString());
     }
 }
